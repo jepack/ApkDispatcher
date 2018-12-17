@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jepack.installer.MainActivity"
+    >
+
+    <EditText
+        android:id="@+id/tv_apk_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="http://192.168.2.225/target.apk"
+        android:focusable="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <ProgressBar
+        android:id="@+id/pg_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="false"
+        app:layout_constraintTop_toBottomOf="@id/tv_apk_address"
+        style="@style/ProgressBar"
+        />
+
+    <Button
+        android:id="@+id/btn_install"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:text="@string/click_install_apk"
+        android:focusable="true"
+        android:background="@drawable/selector_dialog_btn_bg"
+        app:layout_constraintTop_toBottomOf="@id/pg_progress"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_start_service"
+        app:layout_constraintHorizontal_weight="1"
+        android:layout_margin="5dp"
+        >
+        <requestFocus />
+    </Button>
+
+    <Button
+        android:id="@+id/btn_start_service"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:text="@string/start_service"
+        android:focusable="true"
+        android:background="@drawable/selector_dialog_btn_bg"
+        app:layout_constraintStart_toEndOf="@id/btn_install"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pg_progress"
+        app:layout_constraintHorizontal_weight="1"
+        android:layout_margin="5dp"
+        >
+    </Button>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_url_history"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:focusable="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_install"
+        android:layout_margin="5dp">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btn_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_setting"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="10dp"
+        />
+</android.support.constraint.ConstraintLayout>
