@@ -8,6 +8,9 @@ import com.jepack.installer.SharedPreferencesUtil
 import fi.iki.elonen.NanoHTTPD
 import java.net.URLDecoder
 
+/**
+ * 提供局域网服务器，实现简单的api操作
+ */
 class AppServer(port:Int): NanoHTTPD(port) {
 
     override fun serve(session: IHTTPSession?): Response {
