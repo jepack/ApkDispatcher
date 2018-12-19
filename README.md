@@ -1,7 +1,7 @@
 # Apk Dispatcher 
 ## Function profile
 Support several mode of dispatch your APKs to Devices:
-1. APP Push: Base on "Heart Beat" and "Daemon Service" technology， and you can change the heart beat frequency in settings page.
+1. APP Push: Base on "Heart Beat" and "Daemon Service" technology， and you can change the heart beat frequency in settings page. It will auto start when the device reboot.
 2. Server Cache App: You can give an list of app through file "app_cache.json" on your server. The server can be Lan or Internet.
 3. Input APK address: You can specify the apk address by input, and click the install button. It will be recorded into local storage history.
 4. You also can add or remove APK address with a simple server api, based on NanoHttpD server:
