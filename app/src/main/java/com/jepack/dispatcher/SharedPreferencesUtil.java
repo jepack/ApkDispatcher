@@ -1,4 +1,4 @@
-package com.jepack.installer;
+package com.jepack.dispatcher;
 
 import android.content.Context;
 import android.content.SharedPreferences;

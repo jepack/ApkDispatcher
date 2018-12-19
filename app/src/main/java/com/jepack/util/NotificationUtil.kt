@@ -7,7 +7,7 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.support.v4.app.NotificationCompat
-import com.jepack.apkinstaller.R
+import com.jepack.dispatcher.R
 
 /**
  * 显示通知栏工具类

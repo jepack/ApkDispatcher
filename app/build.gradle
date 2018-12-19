@@ -5,7 +5,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "com.jepack.apkinstaller"
+        applicationId "com.jepack.dispatcher"
         minSdkVersion 15
         targetSdkVersion 27
         versionCode 1
@@ -46,6 +46,9 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation project(':DaemonService')
     implementation 'com.android.support:design:27.1.1'
+    implementation 'com.umeng.umsdk:analytics:7.5.4'
+    implementation 'com.umeng.umsdk:common:1.5.4'
+    implementation 'org.kie.modules:org-eclipse-jgit:6.5.0.Final'
 }
 repositories {
     mavenCentral()

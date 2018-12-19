@@ -1,10 +1,10 @@
 package com.jepack.service
 
 import android.net.Uri
-import com.jepack.installer.AIApplication
-import com.jepack.installer.MainActivity
-import com.jepack.installer.MainActivity.Companion.actionSubject
-import com.jepack.installer.SharedPreferencesUtil
+import com.jepack.dispatcher.AIApplication
+import com.jepack.dispatcher.MainActivity
+import com.jepack.dispatcher.MainActivity.Companion.actionSubject
+import com.jepack.dispatcher.SharedPreferencesUtil
 import fi.iki.elonen.NanoHTTPD
 import java.net.URLDecoder
 

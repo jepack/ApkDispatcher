@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.widget.Toast
-import com.jepack.installer.SharedPreferencesUtil
+import com.jepack.dispatcher.SharedPreferencesUtil
 import com.jepack.service.AppService
 
 /**

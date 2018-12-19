@@ -1,4 +1,4 @@
-package com.jepack.installer.settings
+package com.jepack.dispatcher.settings
 
 import android.content.res.Configuration
 import android.os.Bundle

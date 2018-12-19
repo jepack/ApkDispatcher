@@ -1,8 +1,7 @@
-package com.jepack.installer
+package com.jepack.dispatcher
 
 import android.content.Context
 import android.content.Intent
-import android.content.pm.ApplicationInfo
 import android.net.Uri
 import android.support.v4.content.ContextCompat
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -17,12 +16,8 @@ import okio.buffer
 import okio.sink
 import okio.source
 import java.io.File
-import java.io.FileInputStream
 import java.io.IOException
-import java.io.InputStream
 import java.net.UnknownHostException
-import java.security.MessageDigest
-import java.util.HashMap
 import java.util.concurrent.TimeUnit
 import java.util.concurrent.atomic.AtomicInteger
 import java.util.concurrent.atomic.AtomicReference

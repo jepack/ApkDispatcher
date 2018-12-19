@@ -1,4 +1,4 @@
-package com.jepack.installer
+package com.jepack.dispatcher
 
 import android.content.Intent
 import android.graphics.Color
@@ -19,14 +19,15 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
-import com.jepack.apkinstaller.R
+import com.jepack.dispatcher.R
 
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.jepack.installer.settings.SettingsActivity
+import com.jepack.dispatcher.settings.SettingsActivity
 import com.jepack.service.AppService
 import com.jepack.util.Constants
 import com.jepack.util.HttpUtil
+import com.umeng.analytics.MobclickAgent
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 
@@ -41,7 +42,6 @@ import okhttp3.Callback
 import okhttp3.Response
 import widget.XItemDecoration
 import java.io.IOException
-import java.lang.reflect.Type
 
 class MainActivity : AppCompatActivity() {
     private var url: EditText? = null
@@ -279,5 +279,13 @@ class MainActivity : AppCompatActivity() {
         var actionSubject = PublishSubject.create<Action>()
     }
 
+    override fun onPause() {
+        super.onPause()
+        MobclickAgent.onPause(this)
+    }
 
+    override fun onResume() {
+        super.onResume()
+        MobclickAgent.onResume(this)
+    }
 }

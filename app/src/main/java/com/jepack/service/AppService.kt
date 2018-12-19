@@ -6,8 +6,8 @@ import android.os.IBinder
 import android.preference.PreferenceManager
 import android.widget.Toast
 import com.google.gson.Gson
-import com.jepack.apkinstaller.R
-import com.jepack.installer.*
+import com.jepack.dispatcher.R
+import com.jepack.dispatcher.*
 import com.jepack.util.Constants
 import com.jepack.util.HttpUtil
 import com.jepack.util.NotificationUtil

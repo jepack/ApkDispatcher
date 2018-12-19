@@ -1,4 +1,4 @@
-package com.jepack.installer.settings
+package com.jepack.dispatcher.settings
 
 import android.annotation.TargetApi
 import android.content.Context
@@ -16,8 +16,8 @@ import android.preference.PreferenceManager
 import android.preference.RingtonePreference
 import android.text.TextUtils
 import android.view.MenuItem
-import com.jepack.apkinstaller.R
-import com.jepack.installer.TextUtil
+import com.jepack.dispatcher.R
+import com.jepack.dispatcher.TextUtil
 
 /**
  * A [PreferenceActivity] that presents a set of application settings. On

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Application distributor</string>
+	<string name="click_install_apk">Click to install target Apk</string>
+	<string name="start_service">Get a fixed list</string>
+	<string name="title_activity_settings">Settings</string>
+	<string name="pref_header_general">General purpose</string>
+	<string name="pref_title_social_recommendations">Enable social recommendations</string>
+	<string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history</string>
+	<string name="pref_title_display_name">Display name</string>
+	<string name="pref_default_display_name">John Smith</string>
+	<string name="pref_header_data_sync">Data &amp; sync</string>
+	<string name="pref_title_sync_frequency">Sync frequency</string>
+	<string name="pref_title_system_sync_settings">System sync settings</string>
+	<string name="pref_header_notifications">Notifications</string>
+	<string name="pref_title_new_message_notifications">New message notifications</string>
+	<string name="pref_title_ringtone">Ringtone</string>
+	<string name="pref_ringtone_silent">Silent</string>
+	<string name="pref_title_vibrate">Vibrate</string>
+	<string name="pref_app_push_server_key">app_push_server_key</string>
+	<string name="pref_app_push_server">Push service interface address</string>
+	<string name="pref_app_push_server_df">http://pan.jpacg.me/s/6D4c8KZFr5XSpqw/download</string>
+	<string name="pref_app_cache_server_key">app_cache_server_key</string>
+	<string name="pref_app_cache_server">Fixed installation package list interface address</string>
+	<string name="pref_app_cache_server_df">http://pan.jpacg.me/s/ZK7DTeQxs2t59qw/download</string>
+	<string name="pref_app_push_install_key">app_push_install_key</string>
+	<string name="pref_app_push_install">Push app to automatically launch the installation</string>
+	<string name="pref_app_push_install_desc">Automatically download and send an install app request when an app push is received</string>
+	<string name="pref_heart_beat_interval_key">heart_beat_interval</string>
+	<string name="pref_heart_beat_interval">Heartbeat detection interval</string>
+</resources>

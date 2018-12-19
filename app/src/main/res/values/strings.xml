@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ApkInstaller</string>
+    <string name="app_name">应用分发器</string>
     <string name="click_install_apk">点击安装目标Apk</string>
     <string name="start_service">获取固定列表</string>
     <string name="title_activity_settings">Settings</string>
