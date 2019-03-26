@@ -29,4 +29,7 @@
 	<string name="pref_app_push_install_desc">Automatically download and send an install app request when an app push is received</string>
 	<string name="pref_heart_beat_interval_key">heart_beat_interval</string>
 	<string name="pref_heart_beat_interval">Heartbeat detection interval</string>
+	<string name="pref_md5_check_key">pref_md5_check_key</string>
+	<string name="pref_md5_check">Whether to perform MD5 check on the application</string>
+	<string name="pref_md5_check_des">Whether to verify the MD5 value of the installation package, you can open it under good network conditions.</string>
 </resources>

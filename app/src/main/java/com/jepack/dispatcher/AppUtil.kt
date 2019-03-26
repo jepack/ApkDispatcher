@@ -3,6 +3,7 @@ package com.jepack.dispatcher
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.preference.PreferenceManager
 import android.support.v4.content.ContextCompat
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
@@ -123,6 +124,9 @@ class AppUtil {
     private fun downloadFileImpl(taskReference: AtomicReference<STATE>?, subject: Subject<DownloadMsg>,
                                  url: String, headers: Map<String, String>?, targetFile: String, md5:String?,
                                  id:Int?, continuePos:Long = 0L, autoResume: Boolean = false, autoDelete: Boolean = true){
+        val checkMd5 = PreferenceManager
+                .getDefaultSharedPreferences(AIApplication.getAppCtx())
+                .getBoolean(AIApplication.getAppCtx().getString(R.string.pref_md5_check_key), true)
         posMsg(0, 0, setTaskState(taskReference, STATE.STATE_WAITING))
 
         val result = File(targetFile).takeIf { autoDelete && it.exists() }?.delete()
@@ -141,6 +145,7 @@ class AppUtil {
         var total = 0L
         var contentLength = 0L
         try {
+
             //取消
             taskReference?.get()?.takeIf { it in arrayOf(STATE.STATE_STOPPING, STATE.STATE_STOPPED) }?.let{ return }
             val response = call.execute()
@@ -154,10 +159,11 @@ class AppUtil {
                 //取消
                 taskReference?.get()?.takeIf { it in arrayOf(STATE.STATE_STOPPING, STATE.STATE_STOPPED) }?.let{ return }
 
-                while ((source.read(sink.buffer(), bufferSize)).let{
+                while ((source.read(sink.buffer, bufferSize)).let{
                             len = it
                             it
                         } != -1L) {
+
                     //取消
                     taskReference?.get()?.takeIf { it in arrayOf(STATE.STATE_STOPPING, STATE.STATE_STOPPED) }?.let{ return }
 
@@ -165,10 +171,12 @@ class AppUtil {
                     total += len
                     posMsg(total, contentLength, setTaskState(taskReference, STATE.STATE_DOWNLOADING), url, targetFile, md5, id = id)
                 }
+
                 //取消
                 taskReference?.get()?.takeIf { it in arrayOf(STATE.STATE_STOPPING, STATE.STATE_STOPPED) }?.let{ return }
+
                 //下载完成校验MD5
-                if (!TextUtil.isEmpty(md5)) {
+                if (checkMd5 && !TextUtil.isEmpty(md5)) {
                     if (!FileUtils.fileIsExpire(targetFile, md5!!.toUpperCase())) {
                         posMsg(total, contentLength, setTaskState(taskReference, STATE.STATE_COMPLETE), url, targetFile, md5, id = id)
                     } else {

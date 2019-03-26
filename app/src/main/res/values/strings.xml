@@ -93,6 +93,9 @@
         <item>1440</item>
     </string-array>
 
+    <string name="pref_md5_check_key">pref_md5_check_key</string>
+    <string name="pref_md5_check">应用安装MD5校验</string>
+    <string name="pref_md5_check_des">是否校验安装包的MD5值，可以在良好的网络状况下开启</string>
 
 
 </resources>

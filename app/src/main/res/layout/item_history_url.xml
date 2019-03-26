@@ -6,5 +6,7 @@
         android:id="@+id/b_url"
         android:background="@drawable/selector_dialog_btn_bg"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textAllCaps="false"/>
 </android.support.constraint.ConstraintLayout>

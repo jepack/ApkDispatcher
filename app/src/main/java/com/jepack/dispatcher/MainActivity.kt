@@ -193,8 +193,9 @@ class MainActivity : AppCompatActivity() {
         val items = loadHistory()
         list?.forEach {
             val url = it["url"]
+            val name = it["name"]
             if(url != null) {
-                items.add(0, url)
+                items.add(0,"${name?:"Unknown"}: $url")
             }
         }
         adapter.submitList(items)
@@ -246,7 +247,12 @@ class MainActivity : AppCompatActivity() {
                 val appUtil = AppUtil()
                 val apkPath = ContextCompat.getExternalFilesDirs(AIApplication.getAppCtx(), "apks")[0].absolutePath + File.separator + "target.apk"
                 appUtil.registerReceiver(consumer)
-                appUtil.downloadFile(url, apkPath, null, 0)
+                val actUrl = if(url.indexOf("https://") >= 0){
+                    url.substring(url.indexOf("https://"))
+                }else{
+                    url.substring(url.indexOf("http://"))
+                }
+                appUtil.downloadFile(actUrl, apkPath, null, 0)
             }
         }
     }
