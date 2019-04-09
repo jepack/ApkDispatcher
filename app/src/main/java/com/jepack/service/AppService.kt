@@ -63,7 +63,12 @@ class AppService: AbsHeartBeatService() {
 
                 override fun onResponse(call: Call, response: Response) {
 
-                    dealPushResult(response)
+                    try {
+
+                        dealPushResult(response)
+                    }catch (e:Exception){
+                        LogUtil.e(e)
+                    }
                 }
 
 
@@ -91,7 +96,7 @@ class AppService: AbsHeartBeatService() {
         if(SharedPreferencesUtil.instance("app_push").getData(AIApplication.getAppCtx(), "flag", 0) < pushApp.flag) {
             SharedPreferencesUtil.instance("app_push").saveData(AIApplication.getAppCtx(), "flag", pushApp.flag)
 
-            pushApp.url.takeIf { it.isEmpty() }?:return
+            pushApp.url.takeIf { it.isNotEmpty() }?:return
 
             val actIntent = Intent(baseContext, MainActivity::class.java)
             actIntent.putExtra("app_push_url", pushApp.url)
@@ -114,7 +119,7 @@ class AppService: AbsHeartBeatService() {
 
             notification?.let{
                 notification.flags = notification.flags or Notification.FLAG_AUTO_CANCEL
-                startForeground(NOTIFICATION_ID, it)
+                NotificationUtil.startForeground(this, NOTIFICATION_ID, it)
             }
 
             //是否自动发起安装

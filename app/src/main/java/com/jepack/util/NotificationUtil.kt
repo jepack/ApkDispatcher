@@ -1,11 +1,11 @@
 package com.jepack.util
 
-import android.app.Notification
-import android.app.PendingIntent
+import android.app.*
 import android.app.PendingIntent.*
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.support.v4.app.NotificationCompat
 import com.jepack.dispatcher.R
 
@@ -28,10 +28,22 @@ object NotificationUtil {
                 .setPriority(NotificationCompat.PRIORITY_MAX)
                 .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
                 .setChannelId("com.jepack.apkinstaller.CHANNEL")
-                .setContentText(content).setContentTitle(title)
+                .setContentText(content)
+                .setContentTitle(title)
                 .setAutoCancel(true)
-                .setSmallIcon(R.mipmap.ic_launcher).setSound(Uri.parse("android.resource://" + context.packageName + "/" + R.raw.clean_short))
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSound(Uri.parse("android.resource://" + context.packageName + "/" + R.raw.clean_short))
         return notificationBuilder.build()
     }
 
+    fun startForeground(service: Service, id:Int, notification:Notification){
+
+        val notificationManager = service.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            val channelNot = NotificationChannel("com.jepack.apkinstaller.CHANNEL", "ApkDispatcher", NotificationManager.IMPORTANCE_HIGH);
+            notificationManager.createNotificationChannel(channelNot)
+        }
+
+        service.startForeground(id, notification)
+    }
 }

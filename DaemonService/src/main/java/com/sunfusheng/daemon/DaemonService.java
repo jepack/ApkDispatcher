@@ -71,12 +71,13 @@ public class DaemonService extends Service {
             onServiceDisconnected(name);
         }
     };
+    private boolean bound;
 
     private void startBindService() {
         try {
             if (DaemonHolder.mService != null) {
                 startService(new Intent(this, DaemonHolder.mService));
-                bindService(new Intent(this, DaemonHolder.mService), serviceConnection, Context.BIND_IMPORTANT);
+                bound = bindService(new Intent(this, DaemonHolder.mService), serviceConnection, Context.BIND_IMPORTANT);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -109,7 +110,10 @@ public class DaemonService extends Service {
     public void onDestroy() {
         super.onDestroy();
         Log.e(TAG, "onDestroy()");
-        unbindService(serviceConnection);
+        if(bound) {
+            unbindService(serviceConnection);
+            bound = false;
+        }
 
         DaemonHolder.restartService(getApplicationContext(), getClass());
         screenBroadcastReceiver.unregisterScreenBroadcastReceiver(this);
