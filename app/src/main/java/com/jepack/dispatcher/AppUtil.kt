@@ -3,8 +3,10 @@ package com.jepack.dispatcher
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.preference.PreferenceManager
 import android.support.v4.content.ContextCompat
+import android.support.v4.content.FileProvider
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.functions.Consumer
@@ -245,11 +247,19 @@ class AppUtil {
             //没有ROOT权限需要在Receiver中安装和启动应用
             if (targetPath != null) {
                 val intent = Intent(Intent.ACTION_VIEW)
-
-                intent.setDataAndType(Uri.fromFile(File(targetPath)),
-                        "application/vnd.android.package-archive")
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                context.startActivity(intent)
+                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                    val uri = FileProvider.getUriForFile(context, "com.jepack.dispatcher.fileprovider", File(targetPath))
+                    intent.setDataAndType(uri,
+                            "application/vnd.android.package-archive")
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                    context.startActivity(intent)
+                }else{
+                    intent.setDataAndType(Uri.fromFile(File(targetPath)),
+                            "application/vnd.android.package-archive")
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    context.startActivity(intent)
+                }
             }
         }
         fun getApkDir():String{
