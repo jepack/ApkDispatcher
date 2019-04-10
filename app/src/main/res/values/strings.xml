@@ -66,11 +66,11 @@
 
     <string name="pref_app_push_server_key">app_push_server_key</string>
     <string name="pref_app_push_server">推送服务接口地址</string>
-    <string name="pref_app_push_server_df">http://pan.jpacg.me/s/6D4c8KZFr5XSpqw/download</string>
+    <string name="pref_app_push_server_df">https://raw.githubusercontent.com/jepack/ApkDispatcher/master/resources/app_push.json</string>
 
     <string name="pref_app_cache_server_key">app_cache_server_key</string>
     <string name="pref_app_cache_server">固定安装包列表接口地址</string>
-    <string name="pref_app_cache_server_df">http://pan.jpacg.me/s/ZK7DTeQxs2t59qw/download</string>
+    <string name="pref_app_cache_server_df">https://raw.githubusercontent.com/jepack/ApkDispatcher/master/resources/app_cache.json</string>
 
     <string name="pref_app_push_install_key">app_push_install_key</string>
     <string name="pref_app_push_install">推送应用自动启动安装</string>

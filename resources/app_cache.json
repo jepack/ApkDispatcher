@@ -1,7 +1,7 @@
 [
   {
     "name":"分发器升级",
-    "url":"",
-    "md5":""
+    "url":"https://github.com/jepack/ApkDispatcher/releases/download/V0.0.1/ApkDispatcher.apk",
+    "md5":"68f0909be57b45c5d32dda407c5e8092"
   }
  ]

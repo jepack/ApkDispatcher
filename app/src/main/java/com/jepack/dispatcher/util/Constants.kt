@@ -2,7 +2,7 @@ package com.jepack.dispatcher.util
 
 class Constants {
     companion object {
-        const val APP_PUSH = "http://pan.jpacg.me/s/6D4c8KZFr5XSpqw/download"
-        const val FIXED_APP_CACHE = "http://pan.jpacg.me/s/ZK7DTeQxs2t59qw/download"
+        const val APP_PUSH = "https://raw.githubusercontent.com/jepack/ApkDispatcher/master/resources/app_push.json"
+        const val FIXED_APP_CACHE = "https://raw.githubusercontent.com/jepack/ApkDispatcher/master/resources/app_cache.json"
     }
 }

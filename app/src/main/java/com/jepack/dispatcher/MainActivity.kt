@@ -248,8 +248,11 @@ class MainActivity : AppCompatActivity() {
                 appUtil.registerReceiver(consumer)
                 val actUrl = if(url.indexOf("https://") >= 0){
                     url.substring(url.indexOf("https://"))
-                }else{
+                }else if(url.indexOf("http://") >= 0){
                     url.substring(url.indexOf("http://"))
+                }else{
+                    Toast.makeText(itemView.context, "下载地址不正确", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
                 }
                 appUtil.downloadFile(actUrl, apkPath, null, 0)
             }

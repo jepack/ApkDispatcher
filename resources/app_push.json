@@ -1,10 +1,10 @@
 {
-	"flag": 48,
-	"pkg": "",
-	"url": "",
-	"md5": "",
+	"flag": 1,
+	"pkg": "com.jepack.dispatcher",
+	"url": "https://github.com/jepack/ApkDispatcher/releases/download/V0.0.1/ApkDispatcher.apk",
+	"md5": "68f0909be57b45c5d32dda407c5e8092",
     "app_code": 1,
 	"force": true,
 	"title": "最新内测版发布",
-	"desc": ""
+	"desc": "首次发布，欢迎Issue"
 }
