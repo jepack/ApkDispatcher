@@ -1,4 +1,4 @@
-package com.jepack.service
+package com.jepack.dispatcher.service
 
 import android.app.Notification
 import android.content.Intent
@@ -8,9 +8,9 @@ import android.widget.Toast
 import com.google.gson.Gson
 import com.jepack.dispatcher.R
 import com.jepack.dispatcher.*
-import com.jepack.util.Constants
-import com.jepack.util.HttpUtil
-import com.jepack.util.NotificationUtil
+import com.jepack.dispatcher.util.Constants
+import com.jepack.dispatcher.util.HttpUtil
+import com.jepack.dispatcher.util.NotificationUtil
 import com.sunfusheng.daemon.AbsHeartBeatService
 import io.reactivex.functions.Consumer
 import okhttp3.Call

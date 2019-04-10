@@ -19,14 +19,13 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
-import com.jepack.dispatcher.R
 
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.jepack.dispatcher.settings.SettingsActivity
-import com.jepack.service.AppService
-import com.jepack.util.Constants
-import com.jepack.util.HttpUtil
+import com.jepack.dispatcher.service.AppService
+import com.jepack.dispatcher.util.Constants
+import com.jepack.dispatcher.util.HttpUtil
 import com.umeng.analytics.MobclickAgent
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
@@ -40,7 +39,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.Response
-import widget.XItemDecoration
+import com.jepack.dispatcher.widget.XItemDecoration
 import java.io.IOException
 
 class MainActivity : AppCompatActivity() {

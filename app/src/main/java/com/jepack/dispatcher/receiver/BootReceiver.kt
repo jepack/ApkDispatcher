@@ -1,11 +1,11 @@
-package com.jepack.receiver
+package com.jepack.dispatcher.receiver
 
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.widget.Toast
 import com.jepack.dispatcher.SharedPreferencesUtil
-import com.jepack.service.AppService
+import com.jepack.dispatcher.service.AppService
 
 /**
  *

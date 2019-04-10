@@ -1,10 +1,8 @@
-package com.jepack.util
+package com.jepack.dispatcher.util
 
 import okhttp3.Callback
-import okhttp3.Headers
 import okhttp3.OkHttpClient
 import okhttp3.Request
-import org.apache.http.conn.ConnectTimeoutException
 import java.io.IOException
 import java.io.InterruptedIOException
 import java.net.SocketTimeoutException

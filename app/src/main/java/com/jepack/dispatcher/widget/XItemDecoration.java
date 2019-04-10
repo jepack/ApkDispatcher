@@ -1,4 +1,4 @@
-package widget;
+package com.jepack.dispatcher.widget;
 
 import android.graphics.Canvas;
 import android.graphics.Color;

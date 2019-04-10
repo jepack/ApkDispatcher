@@ -38,14 +38,14 @@
             </intent-filter>
         </activity>
 
-        <service android:name="com.jepack.service.AppService" />
+        <service android:name="com.jepack.dispatcher.service.AppService" />
 
         <activity
             android:name="com.jepack.dispatcher.settings.SettingsActivity"
             android:label="@string/title_activity_settings"/>
 
         <!--监听开机消息-->
-        <receiver android:name="com.jepack.receiver.BootReceiver"
+        <receiver android:name="com.jepack.dispatcher.receiver.BootReceiver"
             android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
             <intent-filter android:priority="500">
                 <action android:name="android.intent.action.BOOT_COMPLETED" />

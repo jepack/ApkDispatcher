@@ -1,4 +1,4 @@
-package com.jepack.util
+package com.jepack.dispatcher.util
 
 import android.app.*
 import android.app.PendingIntent.*

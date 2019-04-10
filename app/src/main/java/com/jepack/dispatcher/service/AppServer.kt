@@ -1,4 +1,4 @@
-package com.jepack.service
+package com.jepack.dispatcher.service
 
 import android.net.Uri
 import com.jepack.dispatcher.AIApplication

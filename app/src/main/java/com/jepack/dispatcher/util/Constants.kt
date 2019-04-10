@@ -1,4 +1,4 @@
-package com.jepack.util
+package com.jepack.dispatcher.util
 
 class Constants {
     companion object {

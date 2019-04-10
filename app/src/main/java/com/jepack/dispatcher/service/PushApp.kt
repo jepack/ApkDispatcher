@@ -1,4 +1,4 @@
-package com.jepack.service
+package com.jepack.dispatcher.service
 
 data class PushApp( var flag:Int = 0,
                     var url:String = "",
